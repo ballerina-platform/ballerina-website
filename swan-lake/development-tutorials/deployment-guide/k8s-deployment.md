@@ -13,14 +13,14 @@ Ballerina simplifies Kubernetes artifact generation by deriving configurations d
 
 ### Ballerina application code
 
-Here is an example of a Ballerina service that serves a simple "Hello from Kubernetes!" message on an HTTP request:
+Here is an example of a Ballerina service that serves a simple `Hello from Kubernetes!` message on an HTTP request.
 ```ballerina
 import ballerina/http;
 
 // HTTP Listener on port 9090
 listener http:Listener helloEP = new (9090);
 
-// Define the HTTP service
+
 service /helloWorld on helloEP {
     resource function get greeting() returns string {
         return "Hello from Kubernetes!";
@@ -49,9 +49,9 @@ See [Ballerina Code to Cloud Specification](https://github.com/ballerina-platfor
 
 ### Building the Kubernetes artifacts
 
-Use the `bal build` command to build the Ballerina package. This will generate Kubernetes YAML files and Docker container artifacts:
+Use the `bal build` command to build the Ballerina package. This will generate Kubernetes YAML files and Docker container artifacts.
 
->**Note:** macOS users with Apple Silicon chips need to set an environment variable named `DOCKER_DEFAULT_PLATFORM` to `linux/amd64`, before building the image. This is because the Ballerina Docker image is not supported on Apple Silicon chips yet.
+>**Note:** For macOS users with Apple Silicon chips, it is necessary to set the environment variable DOCKER_DEFAULT_PLATFORM to linux/amd64 before building the image. This requirement exists because the Ballerina Docker image does not currently support Apple Silicon chips.
 > ```
 > export DOCKER_DEFAULT_PLATFORM=linux/amd64
 > ```
@@ -83,24 +83,24 @@ The artifacts are located in `target/kubernetes/hello`.
 
 ### Deploying the application to Kubernetes
 
-Push the Docker image to Docker Hub:
+Push the Docker image to Docker Hub.
 ```
 $ docker push wso2inc/hello:v0.1.0
 ```
 
-Deploy the generated Kubernetes artifacts:
+Deploy the generated Kubernetes artifacts.
 ```
 $ kubectl apply -f /path/to/target/kubernetes/hello
 ```
 
-Expose the service via NodePort for local testing
+Expose the service via NodePort for local testing.
 
 ```
 $ kubectl expose deployment hello-deployment --type=NodePort --name=hello-svc-local
 service/hello-svc-local exposed
 ```
 
-Get the Kubernetes service details
+Get the Kubernetes service details.
 ```
 $ kubectl get svc
 
@@ -110,7 +110,7 @@ hello-svc-local         NodePort        10.108.87.21        <none>        9090:3
 ```
 Access the service using the external IP and NodePort
 
-For Minikube users, you can obtain the IP using:
+For Minikube users, you can obtain the IP using.
 ```yaml
 $ minikube ip
 ```
@@ -127,12 +127,13 @@ $ curl http://<EXTERNAL-IP>:<NODE-PORT>/helloWorld/greeting
 
 For a more complex deployment, this demonstrates a Ballerina app that reads a greeting from a config map and responds to HTTP requests. It covers Kubernetes deployment with resource limits, autoscaling, config maps, and health probes using Code to Cloud. 
 
-1. Create a new Ballerina package
+1. Create a new Ballerina package.
 
 ```bash
 $ bal new hello_k8s
 ```
-2. Replace the `main.bal` file with the following content
+2. Replace the `main.bal` file with the following content.
+
 ```ballerina 
 import ballerina/http;
 
@@ -146,7 +147,7 @@ service /helloWorld on helloEP {
     }
 }
 ```
-3. Create `probes.bal` with health and readiness probes
+3. Create `probes.bal` with health and readiness probes.
 
 ```ballerina
 import ballerina/http;
@@ -162,13 +163,13 @@ service /probes on probeEP {
     }
 }
 ```
-4. Create a `Config.toml` file
+4. Create a `Config.toml` file.
 
 ```toml
 greeting = "Hello"
 ```
 
-5. Update the `Cloud.toml` to include auto-scaling, resource limits, config maps, and probe configuration
+5. Update the `Cloud.toml` to include auto-scaling, resource limits, config maps, and probe configuration.
 
 ```toml
 [container.image]
@@ -198,7 +199,7 @@ path="/probes/healthz"
 port=9091
 path="/probes/readyz"
 ```
-6. Build the package: 
+6. Build the package. 
 ```
 $ bal build --cloud="k8s"
   Compiling source
@@ -223,31 +224,31 @@ $ bal build --cloud="k8s"
 
        target/bin/hello_k8s.jar
    ```
-> **Tip:** You can update `Ballerina.toml` with build option to integrate option to `bal build`
+> **Tip:** You can modify the Ballerina.toml file to include a build option, allowing the integration of the `bal build` command with specific configurations.
 > ```
 > [build-options] 
 >  cloud = "k8s"
 > ```
-   
-- Execute the Kubernetes service, Push Docker image to Docker Hub: 
+
+> **Tip:** You can build the GraalVM executable in Kubernetes.
+> 
+>  GraalVM enhances Kubernetes deployments of Ballerina applications by enabling faster startup times and reduced memory usage. These advantages make it ideal for microservices workloads that demand rapid scaling and minimal resource consumption in a containerized environment. GraalVM’s native image feature uses ahead-of-time compilation, producing lightweight containers and improving Kubernetes deployment efficiency. The GraalVM build is best suited for deployments that prioritize fast scaling and reduced resource usage, while the standard JVM build is more appropriate for services that do not require such optimizations.
+>  Execute the command below to build a Ballerina package.
+> ```
+> $ bal build --graalvm --cloud=k8s
+> ```
+> See [Build the GraalVM executable in a container](https://ballerina.io/learn/build-the-executable-in-a-container/) for more information.
+
+7. Push Docker image to Docker Hub.
 ```
  $ docker push wso2inc/hello-k8s:v0.1.0
 ```
-- Build the GraalVM executable in Kubernetes
 
-  GraalVM enhances Kubernetes deployments of Ballerina applications by enabling faster startup times and reduced memory usage. These advantages make it ideal for microservices workloads that demand rapid scaling and minimal resource consumption in a containerized environment. GraalVM’s native image feature uses ahead-of-time compilation, producing lightweight containers and improving Kubernetes deployment efficiency. The GraalVM build is best suited for deployments that prioritize fast scaling and reduced resource usage, while the standard JVM build is more appropriate for services that do not require such optimizations.
-
-Execute the command below to build a Ballerina package.
-```
-$ bal build --graalvm --cloud=k8s
-```
-See [Build the GraalVM executable in a container](https://ballerina.io/learn/build-the-executable-in-a-container/) for more information.
-
-7. Deploy the Kubernetes artifacts 
+8. Deploy the Kubernetes artifacts. 
 ```
  $ kubectl apply -f target/kubernetes/hello_k8s
 ```
-8. Testing the Kubernetes Deployment
+9. Testing the Kubernetes Deployment.
    Verifying the Kubernetes deployment ensures that the application is running correctly and meets the expected functionality within the Kubernetes environment.
   - Verify the pods
     ```
@@ -270,13 +271,13 @@ See [Build the GraalVM executable in a container](https://ballerina.io/learn/bui
      $ curl http://192.168.49.2:30342/helloWorld/greeting
      Hello, Kubernetes!
     ```
-    Follow the below references for more information:
-  - [Deploy Ballerina on Kubernetes](https://ballerina.io/learn/deploy-ballerina-on-kubernetes/)
-  - [Kubernetes - Hello world](https://ballerina.io/learn/by-example/kubernetes-hello-world/)
+    Follow the references below for more information:
+    - [Deploy Ballerina on Kubernetes](https://ballerina.io/learn/deploy-ballerina-on-kubernetes/)
+    - [Kubernetes - Hello world](https://ballerina.io/learn/by-example/kubernetes-hello-world/)
 
 ## Ballerina deployment with Kubernetes Kustomize
 
-[Kustomize](https://kustomize.io/) is a tool that allows you to modify Kubernetes YAML files without altering the original files. It can enhance the generated YAML from code-to-cloud deployments by applying additional customizations. The `kustomization.yaml` file in the root directory serves as a sample, combining the generated YAML files from different projects. Environment variables, such as specifying the location of the `Config.toml` for a service, can be added using Kustomize patches, enabling further configuration.
+[Kustomize](https://kustomize.io/) is a tool that allows you to modify Kubernetes YAML files without altering the original files. It can enhance the generated YAML from code-to-cloud deployments by applying additional customizations. The `kustomization.yaml` file in the root directory demonstrates how to combine and manage the generated YAML files from multiple projects.. Using Kustomize patches, you can add environment variables, such as specifying the location of the `Config.toml` file for a service, to enable additional configuration.
 
 **kustomization.yaml**
 ```yaml
@@ -293,7 +294,7 @@ See [Kustomize](https://github.com/ballerina-guides/gcp-microservices-demo?tab=r
 
 ## CI/CD with Kubernetes
 
-This GitHub Action workflow automates the continuous integration and continuous deployment (CI/CD) process for a Ballerina project. It triggers every push to the repository, and builds the project.
+This [Ballerina GitHub](https://github.com/ballerina-platform/ballerina-action) action workflow automates the continuous integration and continuous deployment (CI/CD) process for a Ballerina project. It is triggered by every push to the repository and automatically builds the project.
 
 ```yaml
 
@@ -343,7 +344,7 @@ jobs:
           echo "${KUBE_CONFIG_DATA}" | base64 --decode > $HOME/.kube/config
           kubectl apply -f <path to generated artifacts>
 ```
-- **Step 01:** The push event can initiate workflow to deployment process to the Kubernetes cluster.
+The push event can initiate a workflow to the deployment process to the Kubernetes cluster.
 - **Step 02:** This step builds the Ballerina project, compiling the source code and preparing the necessary artifacts for deployment in Kubernetes.
 - **Step 03:** This step logs into a Docker registry (such as Docker Hub or a private registry) to allow pushing the Docker image created in the build to the registry.
 - **Step 04:** Pushes the Docker image to the specified Docker registry.

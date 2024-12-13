@@ -8,26 +8,18 @@ intro: Serverless architecture allows developers to focus on writing application
 ---
 
 1. [AWS Lambda](#aws-lambda)
-2. [Azure Functions](#azure-function)
+2. [Azure Functions](#azure-functions)
 
 ## AWS Lambda
 
 In this guide, we'll walk through deploying a serverless application using AWS Lambda with Ballerina. You'll learn how to set up, deploy, and manage your application, simplifying your production workflow and eliminating the need to manage servers.
-An AWS Lambda function can be triggered by various AWS services. You can find the list of supported notification types below.
-- Direct invocation
-- Simple Queue Service (SQS)
-- Simple Storage Service (S3)
-- DynamoDB 
-- Simple Email Service (SES)
-- API Gateway
+An AWS Lambda function can be triggered by various AWS services. 
 
 This example demonstrates how to write a simple echo function in AWS Lambda.
 
-For more information, see [the AWS Lambda learn guide](https://ballerina.io/learn/aws-lambda/).
-
-1. Set up the prerequisites 
+1. Set up the prerequisites. 
    For the instructions, see [Set up the prerequisites](https://ballerina.io/learn/aws-lambda/#set-up-the-prerequisites)
-2. Here is an example of a Ballerina code for the function
+2. Here is an example of a Ballerina code for the function.
 ```ballerina
 import ballerina/io;
 import ballerinax/aws.lambda;
@@ -70,8 +62,9 @@ More examples can be found here,
 
 ### CI/CD deployment with AWS Lambda
 
-This GitHub Action workflow automates the continuous integration and continuous deployment (CI/CD) process for a Ballerina project. 
-It triggers every push to the repository, and builds the project.
+This [Ballerina GitHub](https://github.com/ballerina-platform/ballerina-action) action workflow automates the continuous integration and continuous deployment (CI/CD) process for a Ballerina project. 
+It is triggered by every push to the repository and automatically builds the project.
+
 ```yaml
 name: Ballerina CI/CD with AWS Lambda
 
@@ -135,8 +128,6 @@ jobs:
 - **Step 05:** Deploy the packaged Ballerina function to AWS Lambda by uploading the ZIP file.
 - **Step 06:** Test the deployed Lambda function by invoking it and outputting the response to confirm that the function works as expected.
 
-See [AWS Lambda](https://ballerina.io/learn/aws-lambda/) for more information.
-
 ## Azure Functions
 
 In this guide, we'll walk through deploying a serverless application using Azure Functions with Ballerina. 
@@ -148,12 +139,9 @@ are represented by listeners attaching an `af:HttpListener` to a service that im
 The resource method behaves like a `ballerina/http` service, In the provided code sample, there's an empty service path and a resource path
 named `hello` with a `get` accessor expecting a `name` query parameter, and the `ballerinax/azure_functions` package automatically handles the required artifact generation and data binding.
 
-For more information, see [the Azure deployment guide](https://ballerina.io/learn/azure-functions/).
+1. Set up the prerequisites by following [these instructions.](https://ballerina.io/learn/azure-functions/#set-up-the-prerequisites)
 
-1. Set up the prerequisites
-For instructions, see [Set up the prerequisites.](https://ballerina.io/learn/azure-functions/#set-up-the-prerequisites)
-
-2. Here is an example of a Ballerina code for the function
+2. Here is an example Ballerina code.
 ```ballerina
 import ballerinax/azure.functions;
 
@@ -165,11 +153,11 @@ service / on new functions:HttpListener() {
     }
 }
 ```
-3. Use `bal build` for generating the Azure Function artifacts.
+3. Use `bal build` to generate the Azure Function artifacts.
 ```
 $ bal build --cloud="azure_functions"
 ```
-4. Execute the Azure CLI command given by the compiler to create and publish the functions by replacing <function_app_name> with your respective function app name.
+4. Execute the Azure CLI command given by the compiler to create and publish the functions by replacing `<function_app_name>` with your respective function app name.
 ```
 $ func azure functionapp publish <function_app_name> --script-root target/azure_functions
 ```
@@ -181,7 +169,7 @@ $ curl https://<function_app_name>.azurewebsites.net/hello\?name\=Jack
 ### CI/CD with Azure Function
 
 This GitHub Action workflow automates the continuous integration and continuous deployment (CI/CD) process for a Ballerina project.
-It triggers every push to the repository, and builds the project.
+It is triggered by every push to the repository and automatically builds the project.
 
 ```yaml
 name: Ballerina CI/CD with Azure Functions
@@ -224,4 +212,6 @@ jobs:
 - **Step 03:** Install the Azure Functions Core Tools, which are necessary for deploying and testing Azure Functions in this GitHub Actions environment.
 - **Step 04:** Deploy the built Ballerina application to an Azure Function App. This step uploads the packaged function to Azure and configures it for serverless execution.
 
-See [Azure Functions](https://ballerina.io/learn/azure-functions/) for information about deployment options can be used in Azure Functions.
+For more reference,
+- See [AWS Lambda](https://ballerina.io/learn/aws-lambda/) for more information.
+- See [Azure Functions](https://ballerina.io/learn/azure-functions/) for information about deployment options can be used in Azure Functions.
