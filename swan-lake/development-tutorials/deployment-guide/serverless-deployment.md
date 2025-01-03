@@ -214,4 +214,4 @@ jobs:
 
 For more reference,
 - See [AWS Lambda](https://ballerina.io/learn/aws-lambda/) for more information.
-- See [Azure Functions](https://ballerina.io/learn/azure-functions/) for information about deployment options can be used in Azure Functions.
+- See [Azure Functions](https://ballerina.io/learn/azure-functions/) for information about deployment options that can be used in Azure Functions.

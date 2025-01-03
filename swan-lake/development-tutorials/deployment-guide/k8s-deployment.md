@@ -134,7 +134,7 @@ $ bal new hello_k8s
 ```
 2. Replace the `main.bal` file with the following content.
 
-```ballerina 
+```ballerina
 import ballerina/http;
 
 listener http:Listener helloEP = new(9090);
@@ -147,6 +147,7 @@ service /helloWorld on helloEP {
     }
 }
 ```
+
 3. Create `probes.bal` with health and readiness probes.
 
 ```ballerina
@@ -277,7 +278,7 @@ $ bal build --cloud="k8s"
 
 ## Ballerina deployment with Kubernetes Kustomize
 
-[Kustomize](https://kustomize.io/) is a tool that allows you to modify Kubernetes YAML files without altering the original files. It can enhance the generated YAML from code-to-cloud deployments by applying additional customizations. The `kustomization.yaml` file in the root directory demonstrates how to combine and manage the generated YAML files from multiple projects.. Using Kustomize patches, you can add environment variables, such as specifying the location of the `Config.toml` file for a service, to enable additional configuration.
+[Kustomize](https://kustomize.io/) is a tool that allows you to modify Kubernetes YAML files without altering the original files. It can enhance the generated YAML from code-to-cloud deployments by applying additional customizations. The `kustomization.yaml` file in the root directory demonstrates how to combine and manage the generated YAML files from multiple projects. Using Kustomize patches, you can add environment variables, such as specifying the location of the `Config.toml` file for a service, to enable additional configuration.
 
 **kustomization.yaml**
 ```yaml
@@ -290,7 +291,6 @@ patchesStrategicMerge:
 - secret-env-patch.yaml
 
 ```
-See [Kustomize](https://github.com/ballerina-guides/gcp-microservices-demo?tab=readme-ov-file#kustomize) for more information.  
 
 ## CI/CD with Kubernetes
 
