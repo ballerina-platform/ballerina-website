@@ -425,6 +425,119 @@ export default function Boxes(props) {
               </Col>
             </Row>
             <Row>
+               <Col xs={12} md={4} lg={4} className={styles.boxCol}>
+                <div className={styles.cardWrapper}>
+                  <div>
+                    <h3 id='configurability' className='section'>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="30"
+                        fill="currentColor"
+                        className="bi bi-link-45deg mdButton pe-2"
+                        viewBox="0 0 16 16"
+                        onClick={(e) => props.getLink(e.target, 'configurability')}
+                      >
+                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
+                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z" />
+                      </svg>
+                      Configurability
+                    </h3>
+                    <div className={styles.cardDescription}>
+                      <div className={styles.content}>
+                        <p className={styles.title}>
+                          <a href={`${prefix}/learn/configure-a-sample-ballerina-service`} className={styles.titleLink}>
+                            Configure a sample Ballerina service
+                          </a>
+                        </p>
+                        <p className={styles.description}>Configure values at runtime through configurable module-level variables.</p>
+                      </div>
+                    </div>
+
+                    <div className={styles.cardDescription}>
+                      <div className={styles.content}>
+                        <p className={styles.title}>
+                          <a href={`${prefix}/learn/provide-values-to-configurable-variables`} className={styles.titleLink}>
+                            Provide values to configurable variables
+                          </a>
+                        </p>
+                        <p className={styles.description}>Provide configurable values through configuration files, command-line arguments, and environment variables.</p>
+                      </div>
+                    </div>
+
+                    <div className={styles.cardDescription}>
+                      <div className={styles.content}>
+                        <p className={styles.title}>
+                          <a href={`${prefix}/learn/configure-values`} className={styles.titleLink}>
+                            Configure values
+                          </a>
+                        </p>
+                        <p className={styles.description}>Advanced use cases of configuring values using configurable variables.</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </Col>
+              <Col xs={12} md={4} lg={4} className={styles.boxCol}>
+                <div className={styles.cardWrapper}>
+                  <div>
+                    <h3 id='deployment-guidelines' className='section'>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="30"
+                        fill="currentColor"
+                        className="bi bi-link-45deg mdButton pe-2"
+                        viewBox="0 0 16 16"
+                        onClick={(e) => props.getLink(e.target, 'deployment-guidelines')}
+                      >
+                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
+                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z" />
+                      </svg>
+                      Deployment guidelines
+                    </h3>
+                    <div className={styles.cardDescription}>
+                      <div className={styles.content}>
+                        <p className={styles.title}>
+                          <a href={`${prefix}/learn/deployment-guidelines-overview`} className={styles.titleLink}>
+                            Deployment guidelines overview
+                          </a>
+                        </p>
+                        <p className={styles.description}>Guidelines for Ballerina deployment in production.</p>
+                      </div>
+
+                      <div className={styles.content}>
+                        <p className={styles.title}>
+                          <a href={`${prefix}/learn/k8s-deployment/`} className={styles.titleLink}>
+                            Kubernetes deployment
+                          </a>
+                        </p>
+                        <p className={styles.description}>Guidelines for deployment in Kubernetes.</p>
+                      </div>
+
+                      <div className={styles.content}>
+                        <p className={styles.title}>
+                          <a href={`${prefix}/learn/serverless-deployment/`} className={styles.titleLink}>
+                            Serverless deployment
+                          </a>
+                        </p>
+                        <p className={styles.description}>Guidelines for deployment in Serverless.</p>
+                      </div>
+
+                      <div className={styles.content}>
+                        <p className={styles.title}>
+                          <a href={`${prefix}/learn/virtual-machine-deployment`} className={styles.titleLink}>
+                            Virtual machine deployment
+                          </a>
+                        </p>
+                        <p className={styles.description}>Guidelines for deployment in VMs.</p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </Col>
               <Col xs={12} md={4} lg={4} className={styles.boxCol}>
                 <div className={styles.cardWrapper}>
                   <div>
@@ -485,109 +598,6 @@ export default function Boxes(props) {
                         <p className={styles.description}>Data stores for managing data persistence.</p>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </Col>
-              <Col xs={12} md={4} lg={4} className={styles.boxCol}>
-                <div className={styles.cardWrapper}>
-                  <div>
-                    <h3 id='run-in-the-cloud' className='section'>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="30"
-                        height="30"
-                        fill="currentColor"
-                        className="bi bi-link-45deg mdButton pe-2"
-                        viewBox="0 0 16 16"
-                        onClick={(e) => props.getLink(e.target, 'run-in-the-cloud')}
-                      >
-                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
-                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z" />
-                      </svg>
-                      Run in the cloud
-                    </h3>
-                    <div className={styles.cardDescription}>
-                      <div className={styles.content}>
-                        <p className={styles.title}>
-                          <a href={`${prefix}/learn/code-to-cloud-deployment`} className={styles.titleLink}>
-                            Code to cloud deployment
-                          </a>
-                        </p>
-                        <p className={styles.description}>Generate cloud deployment artifacts.</p>
-                      </div>
-                      <div className={styles.content}>
-                        <p className={styles.title}>
-                          <a href={`${prefix}/learn/azure-functions/`} className={styles.titleLink}>
-                            Azure Function
-                          </a>
-                        </p>
-                        <p className={styles.description}>Expose Ballerina functions as serverless functions in the Azure Functions platform.</p>
-                      </div>
-
-                      <div className={styles.content}>
-                        <p className={styles.title}>
-                          <a href={`${prefix}/learn/aws-lambda/`} className={styles.titleLink}>
-                            AWS Lambda
-                          </a>
-                        </p>
-                        <p className={styles.description}>Write AWS Lambda-compatible packages.</p>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </Col>
-              <Col xs={12} md={4} lg={4} className={styles.boxCol}>
-                <div className={styles.cardWrapper}>
-                  <div>
-                    <h3 id='configurability' className='section'>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="30"
-                        height="30"
-                        fill="currentColor"
-                        className="bi bi-link-45deg mdButton pe-2"
-                        viewBox="0 0 16 16"
-                        onClick={(e) => props.getLink(e.target, 'configurability')}
-                      >
-                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
-                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z" />
-                      </svg>
-                      Configurability
-                    </h3>
-                    <div className={styles.cardDescription}>
-                      <div className={styles.content}>
-                        <p className={styles.title}>
-                          <a href={`${prefix}/learn/configure-a-sample-ballerina-service`} className={styles.titleLink}>
-                            Configure a sample Ballerina service
-                          </a>
-                        </p>
-                        <p className={styles.description}>Configure values at runtime through configurable module-level variables.</p>
-                      </div>
-                    </div>
-
-                    <div className={styles.cardDescription}>
-                      <div className={styles.content}>
-                        <p className={styles.title}>
-                          <a href={`${prefix}/learn/provide-values-to-configurable-variables`} className={styles.titleLink}>
-                            Provide values to configurable variables
-                          </a>
-                        </p>
-                        <p className={styles.description}>Provide configurable values through configuration files, command-line arguments, and environment variables.</p>
-                      </div>
-                    </div>
-
-                    <div className={styles.cardDescription}>
-                      <div className={styles.content}>
-                        <p className={styles.title}>
-                          <a href={`${prefix}/learn/configure-values`} className={styles.titleLink}>
-                            Configure values
-                          </a>
-                        </p>
-                        <p className={styles.description}>Advanced use cases of configuring values using configurable variables.</p>
-                      </div>
-                    </div>
-
                   </div>
                 </div>
               </Col>

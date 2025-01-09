@@ -20,6 +20,7 @@ cp -r ./out/learn/test-document-the-code/* ./out/learn
 cp -r ./out/learn/source-code-dependencies/* ./out/learn
 cp -r ./out/learn/ballerina-persist/* ./out/learn
 cp -r ./out/learn/run-in-the-cloud/* ./out/learn
+cp -r ./out/learn/deployment-guide/* ./out/learn
 
 #Rearrange files inside the sub-folders of resources folder
 cp -r ./out/learn/featured-scenarios/* ./out/learn
@@ -30,7 +31,7 @@ cp ./out/404/index.html ./out/404.html
 
 #Remove duplicated files
 rm -rf ./out/learn/development-tutorials/ ./out/learn/integration/ ./out/learn/integration-tools/ ./out/learn/troubleshoot-the-runtime/ ./out/policies/ ./out/learn/references/ .out/learn/resources/
-rm -rf ./out/learn/build-a-graalvm-executable ./out/learn/ballerina-central/ ./out/learn/configurability/ ./out/learn/java-interoperability/ ./out/learn/test-document-the-code/ ./out/learn/source-code-dependencies/ ./out/learn/ballerina-persist/ ./out/learn/build-and-run/ ./out/learn/observability/ ./out/learn/featured-scenarios/ ./out/learn/learn-the-language/* ./out/learn/run-in-the-cloud/
+rm -rf ./out/learn/build-a-graalvm-executable ./out/learn/ballerina-central/ ./out/learn/configurability/ ./out/learn/java-interoperability/ ./out/learn/test-document-the-code/ ./out/learn/source-code-dependencies/ ./out/learn/ballerina-persist/ ./out/learn/build-and-run/ ./out/learn/observability/ ./out/learn/featured-scenarios/ ./out/learn/learn-the-language/* ./out/learn/run-in-the-cloud/ ./out/learn/deployment-guide/
 
 
 #Edit the sitemap
@@ -54,4 +55,5 @@ sed -i '' 's/featured-scenarios\///g' ./out/sitemap.xml
 sed -i '' 's/learn-the-language\///g' ./out/sitemap.xml
 sed -i '' 's/build-and-run\///g' ./out/sitemap.xml
 sed -i '' 's/run-in-the-cloud\///g' ./out/sitemap.xml
+sed -i '' 's/deployment-guide\///g' ./out/sitemap.xml
 

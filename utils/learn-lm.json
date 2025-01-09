@@ -489,9 +489,85 @@
                     ]
                 },
                 {
-                    "dirName": "Bal persist",
+                    "dirName": "Configurability",
                     "level": 2,
                     "position": 4,
+                    "isDir": true,
+                    "url": "/learn/configurability",
+                    "id": "configurability",
+                    "subDirectories": [
+                        {
+                            "dirName": "Configure a sample Ballerina service",
+                            "level": 3,
+                            "position": 1,
+                            "isDir": false,
+                            "url": "/learn/configure-a-sample-ballerina-service",
+                            "id": "configure-a-sample-ballerina-service"
+                        },
+                        {
+                            "dirName": "Configure values ",
+                            "level": 3,
+                            "position": 2,
+                            "isDir": false,
+                            "url": "/learn/configure-values",
+                            "id": "configure-values"
+                        },
+                        {
+                            "dirName": "Provide values to configurable variables",
+                            "level": 43,
+                            "position": 1,
+                            "isDir": false,
+                            "url": "/learn/provide-values-to-configurable-variables",
+                            "id": "provide-values-to-configurable-variables"
+                        }
+                    ]
+                },
+                {
+                    "dirName": "Deployment guidelines",
+                    "level": 2,
+                    "position": 5,
+                    "isDir": true,
+                    "url": "/learn/deployment-guide",
+                    "id": "deployment-guide",
+                    "subDirectories": [
+                        {
+                            "dirName": "Deployment guidelines overview",
+                            "level": 3,
+                            "position": 1,
+                            "isDir": false,
+                            "url": "/learn/deployment-guidelines-overview",
+                            "id": "deployment-guidelines-overview"
+                        },
+                        {
+                            "dirName": "Kubernetes deployment",
+                            "level": 3,
+                            "position": 2,
+                            "isDir": false,
+                            "url": "/learn/k8s-deployment",
+                            "id": "k8s-deployment"
+                        },
+                        {
+                            "dirName": "Serverless deployment ",
+                            "level": 3,
+                            "position": 3,
+                            "isDir": false,
+                            "url": "/learn/serverless-deployment",
+                            "id": "serverless-deployment"
+                        },
+                        {
+                            "dirName": "Virtual machine deployment",
+                            "level": 3,
+                            "position": 4,
+                            "isDir": false,
+                            "url": "/learn/virtual-machine-deployment",
+                            "id": "virtual-machine-deployment"
+                        }
+                    ]
+                },
+                {
+                    "dirName": "Bal persist",
+                    "level": 2,
+                    "position": 6,
                     "isDir": true,
                     "url": "/learn/ballerina-persist",
                     "id": "ballerina-persist",
@@ -543,74 +619,6 @@
                             "isDir": false,
                             "url": "/learn/supported-data-stores",
                             "id": "supported-data-stores"
-                        }
-                    ]
-                },
-                {
-                    "dirName": "Run in the cloud",
-                    "level": 2,
-                    "position": 5,
-                    "isDir": true,
-                    "url": "/learn/run-in-the-cloud",
-                    "id": "run-in-the-cloud",
-                    "subDirectories": [
-                        {
-                            "dirName": "Code to cloud deployment",
-                            "level": 3,
-                            "position": 1,
-                            "isDir": false,
-                            "url": "/learn/code-to-cloud-deployment",
-                            "id": "code-to-cloud-deployment"
-                        },
-                        {
-                            "dirName": "Azure Functions",
-                            "level": 3,
-                            "position": 1,
-                            "isDir": false,
-                            "url": "/learn/azure-functions",
-                            "id": "azure-functions"
-                        },
-                        {
-                            "dirName": "AWS Lambda",
-                            "level": 3,
-                            "position": 2,
-                            "isDir": false,
-                            "url": "/learn/aws-lambda",
-                            "id": "aws-lambda"
-                        }
-                    ]
-                },
-                {
-                    "dirName": "Configurability",
-                    "level": 2,
-                    "position": 6,
-                    "isDir": true,
-                    "url": "/learn/configurability",
-                    "id": "configurability",
-                    "subDirectories": [
-                        {
-                            "dirName": "Configure a sample Ballerina service",
-                            "level": 3,
-                            "position": 1,
-                            "isDir": false,
-                            "url": "/learn/configure-a-sample-ballerina-service",
-                            "id": "configure-a-sample-ballerina-service"
-                        },
-                        {
-                            "dirName": "Configure values ",
-                            "level": 3,
-                            "position": 2,
-                            "isDir": false,
-                            "url": "/learn/configure-values",
-                            "id": "configure-values"
-                        },
-                        {
-                            "dirName": "Provide values to configurable variables",
-                            "level": 43,
-                            "position": 1,
-                            "isDir": false,
-                            "url": "/learn/provide-values-to-configurable-variables",
-                            "id": "provide-values-to-configurable-variables"
                         }
                     ]
                 },

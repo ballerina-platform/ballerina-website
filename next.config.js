@@ -257,6 +257,22 @@ const nextConfig = {
         destination: `/${redirectBase}learn/development-tutorials/run-in-the-cloud/aws-lambda`,
       },
       {
+        source: `/${redirectBase}learn/deployment-guidelines-overview`,
+        destination: `/${redirectBase}learn/development-tutorials/deployment-guide/deployment-guidelines-overview`,
+      },
+      {
+        source: `/${redirectBase}learn/virtual-machine-deployment`,
+        destination: `/${redirectBase}learn/development-tutorials/deployment-guide/virtual-machine-deployment`,
+      },
+      {
+        source: `/${redirectBase}learn/k8s-deployment`,
+        destination: `/${redirectBase}learn/development-tutorials/deployment-guide/k8s-deployment`,
+      },
+      {
+        source: `/${redirectBase}learn/serverless-deployment`,
+        destination: `/${redirectBase}learn/development-tutorials/deployment-guide/serverless-deployment`,
+      },
+      {
         source: `/${redirectBase}learn/test-ballerina-code/:slug`,
         destination: `/${redirectBase}learn/development-tutorials/test-document-the-code/test-ballerina-code/:slug`,
       },
