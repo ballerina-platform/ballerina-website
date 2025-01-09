@@ -129,7 +129,6 @@ For a more complex deployment, this demonstrates a Ballerina app that reads a gr
 
 1. Create a new Ballerina package.
 
-```bash
 $ bal new hello_k8s
 ```
 2. Replace the `main.bal` file with the following content.
