@@ -57,7 +57,7 @@ import ballerinax/prometheus as _;
 To support Prometheus as the metrics reporter, an HTTP endpoint starts with the context of `/metrics` in default port 9797 when starting the Ballerina service.
 
 ### Step 3 - Configure Ballerina runtime configurations
-You can set up prometheus for your Ballerina project using configuration similar to the following in your `Config.toml` file.
+You can set up prometheus for your Ballerina project using configurations similar to the following in your `Config.toml` file.
 
 ```toml
 [ballerina.observe]
@@ -71,8 +71,8 @@ host="0.0.0.0"
 
 Configuration key | Description | Default value | Possible values 
 --- | --- | --- | --- 
-ballerinax.prometheus. port | The value of the port to which the '/metrics' service will bind to. This service will be used by Prometheus to scrape the information of the Ballerina service. | `9797` | Any suitable value for port 0 - 0 - 65535. However, within that range, ports 0 - 1023 are generally reserved for specific purposes, therefore it is advisable to select a port without that range. 
-ballerinax.prometheus. host | The name of the host to which the '/metrics' service will bind to. This service will be used by Prometheus to scrape the information of the Ballerina service. | `0.0.0.0` | IP or Hostname or 0.0.0.0 of the node in which the Ballerina service is running.
+ballerinax.prometheus. port | The value of the port to which the '/metrics' service will bind. This service will be used by Prometheus to scrape the information of the Ballerina service. | `9797` | Any suitable value for port 0 - 0 - 65535. However, within that range, ports 0 - 1023 are generally reserved for specific purposes, therefore it is advisable to select a port without that range. 
+ballerinax.prometheus. host | The name of the host to which the '/metrics' service will bind. This service will be used by Prometheus to scrape the information of the Ballerina service. | `0.0.0.0` | IP or Hostname or 0.0.0.0 of the node in which the Ballerina service is running.
 
 ### Step 4 - Run the Ballerina service
 
@@ -120,10 +120,10 @@ $ curl -X POST http://localhost:8090/shop/order \
 $ curl -X GET http://localhost:8090/shop/order/1
 ```
 
-### Step 6 - View metrics on Prometheus server
+### Step 6 - View metrics on the Prometheus server
 
 Go to <http://localhost:19090/> and check whether you can see the Prometheus graph.
-Ballerina metrics should appear in Prometheus graph's metrics list when the Ballerina service is started. 
+Ballerina metrics should appear in the Prometheus graph's metrics list when the Ballerina service is started.
 
 ![Ballerina Metrics Listed in Prometheus](/learn/images/ballerina-metrics-listed-in-prometheus.png "Ballerina Metrics Listed in Prometheus")
 
@@ -137,10 +137,9 @@ You can also use the following command to get the metrics.
 
 ## Set up Grafana
 
-[Grafana](https://grafana.com/) can be used to visualize Ballerina metrics provided for prometheus. First, users need to setup Ballerina project to observe metrics in prometheus. Please follow steps mentioned above.
+[Grafana](https://grafana.com/) can be used to visualize Ballerina metrics provided for Prometheus. First, users need to set up the Ballerina project to observe metrics in Prometheus. Please follow the steps mentioned above.
 
-Let’s use Grafana to visualize metrics in a dashboard. For this, we need to install Grafana and configure
-Prometheus as a data source. Follow the steps below to configure Grafana.
+Let’s use Grafana to visualize metrics in a dashboard. For this, we need to install Grafana and configure Prometheus as a data source. Follow the steps below to configure Grafana.
 
 1. Start Grafana as a Docker container with the command below.
 
@@ -153,7 +152,7 @@ Prometheus as a data source. Follow the steps below to configure Grafana.
 
 3. Login to the dashboard with the default user, username: `admin` and password: `admin`
 
-4. Add Prometheus as a data source with `Browser` access configuration as provided below.
+4. Add Prometheus as a data source with the `Browser` access configuration as provided below.
 
     ![Grafana Prometheus datasource](/learn/images/grafana-prometheus-datasource.png "Grafana Prometheus Datasource")
 
