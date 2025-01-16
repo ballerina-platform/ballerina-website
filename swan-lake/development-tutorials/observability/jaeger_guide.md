@@ -7,7 +7,7 @@ active: observe-ballerina-programs-with-jaeger
 intro: The sections below include information about how to observe distributed tracing of Ballerina programs with Jaeger.
 ---
 
-Users can configure Ballerina to support distributed tracing with [Jaeger](https://www.jaegertracing.io/), which is one of the open source and distributed tracing platforms used worldwide. Ballerina provides tracing data in opentelemetry format.
+Users can configure Ballerina to support distributed tracing with [Jaeger](https://www.jaegertracing.io/), which is one of the open-source and distributed tracing platforms used worldwide. Ballerina provides tracing data in OpenTelemetry format.
 
 This [Example](<LINK_TO_OVERVIEW_OF_BALLERINA_OBSERVABILITY_PAGE_EXAMPLE_SECTION>) will be used in the guide. Follow the steps given below to observe Ballerina tracing in Jaeger.
 
@@ -32,11 +32,11 @@ To include the Jaeger extension into the executable, the `ballerinax/jaeger` mod
 import ballerinax/jaeger as _;
 ```
 
-Jaeger extension has a `Opentelemetry GRPC Span Exporter` which will push tracing data as batches to the Jaeger server endpoint (default - http://localhost:4317) in opentelemetry format.
+Jaeger extension has an `Opentelemetry GRPC Span Exporter` which will push tracing data as batches to the Jaeger server endpoint (default - http://localhost:4317) in opentelemetry format.
 
 ### Step 3 - Configure Ballerina runtime configurations
 
-Tracing can be enabled in your Ballerina project using configuration similar to the following in your `Config.toml` file.
+Tracing can be enabled in your Ballerina project using configurations similar to the following in your `Config.toml` file.
 
 ```toml
 [ballerina.observe]
@@ -109,9 +109,9 @@ $ curl -X POST http://localhost:8090/shop/order \
 $ curl -X GET http://localhost:8090/shop/order/1
 ```
 
-### Step 6 - View distributed tracing on Jaeger server
+### Step 6 - View distributed tracing on the Jaeger server
 
-Go to <http://localhost:16686> and load the web UI of Jaeger to make sure it is functioning properly. You can select the service which you need tracing information find traces.
+Go to <http://localhost:16686> and load the web UI of Jaeger to make sure it is functioning properly. You can select the service for which you need tracing information find traces.
 
 The image below is the sample tracing information you can see in Jaeger.
     
