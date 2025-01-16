@@ -114,14 +114,14 @@ $ curl -X GET http://localhost:8090/shop/order/1
 
 You can view the metrics that were published to the New Relic platform in the New Relic query builder. You can view the metrics query data in graphical format, as shown below.
 
-![New Relic Metric Query Builder](/learn/images/newrelic-metric-query-builder.png "New Relic Metric Query Builder")
+![New Relic metric Query Builder](/learn/images/newrelic-metric-query-builder.png "New Relic metric Query Builder")
 
 You can create a dashboard from the metrics provided by Ballerina in the New Relic platform.
-
-![Ballerina Metric Dashboard on New Relic](/learn/images/newrelic-metric-dashboard.png "Ballerina Metric Dashboard on New Relic")
 
 ### Step 7 - View tracing on the New Relic platform
 
 You can view the traces that were published to the New Relic platform in New Relic traces. 
 
-![Ballerina Traces on New Relic](/learn/images/newrelic-tracing.png "Ballerina Traces on New Relic")
+![Ballerina traces on New Relic](/learn/images/newrelic-tracing.png "Ballerina traces on New Relic")
+
+![Span tags on New Relic](/learn/images/newrelic-span-tags.png "Span tags on New Relic")
