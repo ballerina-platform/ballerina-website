@@ -11,17 +11,15 @@ Users can observe Ballerina programs with [DataDog](https://www.datadoghq.com/),
 
 This [Example](<LINK_TO_OVERVIEW_OF_BALLERINA_OBSERVABILITY_PAGE_EXAMPLE_SECTION>) will be used in the guide. Follow the steps given below to observe Ballerina tracing and metrics in DataDog.
 
-### Step 1 - Set up your DataDog account
+Create a new account in DataDog. Select a billing plan according to your needs (A free plan is also included).
 
-Create a new account in DataDog. Select a billing plan according to your needs (free plan is also included).
+Then follow the steps below to set up your Datadog account to view metrics and tracing provided by Ballerina.
 
-Then follow steps below to set up your Datadog account to view metrics and tracing provided by Ballerina.
+1. Add Prometheus to the Integrations for your account
 
-1. Add Prometheus in the Integrations for your account
+   You need to add Prometheus in the Integrations. Please go to the “Integrations” tab and search for Prometheus.
 
-    You need to add Prometheus in the Integrations. Please go to        “Integrations” tab and search for Prometheus.
-
-    ![Adding Prometheus in DataDog Integrations](/learn/images/datadog-add-prometheus.png "Adding Prometheus in DataDog Integrations")
+   ![Adding Prometheus in DataDog Integrations](/learn/images/datadog-add-prometheus.png "Adding Prometheus in DataDog Integrations")
 
 2. Create an API key
 
@@ -31,7 +29,7 @@ Then follow steps below to set up your Datadog account to view metrics and traci
 
     ![Creating an API key in DataDog](/learn/images/datadog-creating-apikey.png "Creating an API key in DataDog")
 
-### Step 2 - Set up DataDog agent
+### Step 2 - Set up the DataDog agent
 
 After setting up your DataDog account, you need to set up a DataDog Agent in your instance.
 
@@ -43,7 +41,7 @@ Then follow the steps below to configure metrics and tracing data publishing to 
 
 1. Add configuration for metrics
 
-    Once you add Prometheus by following the step 1, you will get a guide to configure a DataDog agent in your instance.
+    Once you add Prometheus by following step 1, you will get a guide to configure a DataDog agent in your instance.
 
     ![Prometheus configurations for DataDog agent](/learn/images/datadog-agent-prometheus-configurations.png "Prometheus configurations for DataDog agent")
 
@@ -86,7 +84,7 @@ Then follow the steps below to configure metrics and tracing data publishing to 
     enabled: true
     ```
 
-    Ballerina uses OpenTelemetry to provide traces. Therefore we need to setup OpenTelemetry configurations as follows.
+    Ballerina uses OpenTelemetry to provide traces. Therefore, we need to set up OpenTelemetry configurations as follows.
 
     ```yaml
     otlp_config:
@@ -107,11 +105,11 @@ import ballerinax/jaeger as _;
 
 To support Prometheus as the metrics reporter, an HTTP endpoint starts with the context of `/metrics` in default port 9797 when starting the Ballerina service.
 
-Jaeger extension has a `Opentelemetry GRPC Span Exporter` which will push tracing data as batches to the endpoint (default - http://localhost:4317) in opentelemetry format.
+Jaeger extension has an `Opentelemetry GRPC Span Exporter` which will push tracing data as batches to the endpoint (default - http://localhost:4317) in opentelemetry format.
 
 ### Step 4 - Configure Ballerina runtime configurations
 
-Tracing and metrics can be enabled in your Ballerina project using configuration similar to the following in your `Config.toml` file.
+Tracing and metrics can be enabled in your Ballerina project using configurations similar to the following in your `Config.toml` file.
 
 ```toml
 [ballerina.observe]
@@ -137,8 +135,8 @@ The table below provides the descriptions of each configuration option and possi
 
 Configuration key | Description | Default value | Possible values 
 --- | --- | --- | --- 
-ballerinax.prometheus. port | The value of the port to which the '/metrics' service will bind to. This service will be used by Prometheus to scrape the information of the Ballerina service. | `9797` | Any suitable value for port 0 - 0 - 65535. However, within that range, ports 0 - 1023 are generally reserved for specific purposes, therefore it is advisable to select a port without that range. 
-ballerinax.prometheus. host | The name of the host to which the '/metrics' service will bind to. This service will be used by Prometheus to scrape the information of the Ballerina service. | `0.0.0.0` | IP or Hostname or 0.0.0.0 of the node in which the Ballerina service is running.
+ballerinax.prometheus. port | The value of the port to which the '/metrics' service will bind. This service will be used by Prometheus to scrape the information of the Ballerina service. | `9797` | Any suitable value for port 0 - 0 - 65535. However, within that range, ports 0 - 1023 are generally reserved for specific purposes, therefore it is advisable to select a port without that range. 
+ballerinax.prometheus. host | The name of the host to which the '/metrics' service will bind. This service will be used by Prometheus to scrape the information of the Ballerina service. | `0.0.0.0` | IP or Hostname or 0.0.0.0 of the node in which the Ballerina service is running.
 ballerinax.jaeger. agentHostname | Hostname of the Jaeger agent | localhost | IP or hostname of the Jaeger agent. If it is running on the same node as Ballerina, it can be localhost. 
 ballerinax.jaeger. agentPort | Port of the Jaeger agent | 4317 | The port on which the Jaeger agent is listening.
 ballerinax.jaeger. samplerType | Type of the sampling methods used in the Jaeger tracer. | const | `const`, `probabilistic`, or `ratelimiting`.
