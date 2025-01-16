@@ -115,7 +115,7 @@ Go to <http://localhost:16686> and load the web UI of Jaeger to make sure it is 
 
 The image below is the sample tracing information you can see in Jaeger.
     
-![Jaeger Tracing Dashboard](/learn/images/jaeger-tracing-dashboard.png "Jaeger Tracing Dashboard")
+![Jaeger tracing Dashboard](/learn/images/jaeger-tracing-dashboard.png "Jaeger tracing Dashboard")
 
-![Span Details in Jaeger](/learn/images/span-details-jaeger.png "Span Details in Jaeger")
+![Span details in Jaeger](/learn/images/span-details-jaeger.png "Span details in Jaeger")
 

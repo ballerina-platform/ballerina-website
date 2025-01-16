@@ -114,4 +114,4 @@ Go to <http://localhost:9411> and load the web UI of Zipkin to make sure it is f
 
 The image below is the sample tracing information you can see in Zipkin.
     
-![Zipkin Tracing Dashboard](/learn/images/zipkin-tracing-dashboard.png "Zipkin Tracing Dashboard")
+![Zipkin tracing Dashboard](/learn/images/zipkin-tracing-dashboard.png "Zipkin tracing Dashboard")

@@ -125,9 +125,9 @@ $ curl -X GET http://localhost:8090/shop/order/1
 Go to <http://localhost:19090/> and check whether you can see the Prometheus graph.
 Ballerina metrics should appear in the Prometheus graph's metrics list when the Ballerina service is started.
 
-![Ballerina Metrics Listed in Prometheus](/learn/images/ballerina-metrics-listed-in-prometheus.png "Ballerina Metrics Listed in Prometheus")
+![Ballerina metrics listed in Prometheus](/learn/images/ballerina-metrics-listed-in-prometheus.png "Ballerina metrics listed in Prometheus")
 
-![Ballerina Metric in Graph](/learn/images/ballerina-metrics-in-graph.png "Ballerina Metric in Graph")
+![Ballerina metric in graph format](/learn/images/ballerina-metrics-in-graph.png "Ballerina metric in graph format")
 
 You can also use the following command to get the metrics.
 
@@ -154,13 +154,13 @@ Let’s use Grafana to visualize metrics in a dashboard. For this, we need to in
 
 4. Add Prometheus as a data source with the `Browser` access configuration as provided below.
 
-    ![Grafana Prometheus datasource](/learn/images/grafana-prometheus-datasource.png "Grafana Prometheus Datasource")
+    ![Grafana Prometheus data source](/learn/images/grafana-prometheus-datasource.png "Grafana Prometheus data source")
 
 5. Import the Grafana dashboard designed to visualize Ballerina metrics from <a href="https://grafana.com/dashboards/5841" target="_blank">https://grafana.com/dashboards/5841</a> as shown below.
-    ![Import dashboard for Ballerina](/learn/images/grafana-import-dashboard.png "Import Dashboard For Ballerina")
+    ![Import dashboard for Ballerina](/learn/images/grafana-import-dashboard.png "Import dashboard For Ballerina")
 
 This dashboard consists of service and client invocation level metrics in near real-time view. 
 
-The Ballerina HTTP Service Metrics Dashboard Panel will be as shown below.
+The Ballerina HTTP service metrics dashboard panel will be as shown below.
 
-![Ballerina Service Metrics](/learn/images/grafana-ballerina-metrics-dashboard.png "Ballerina Sample Service Metrics Dashboard")
+![Ballerina metrics dashboard](/learn/images/grafana-ballerina-metrics-dashboard.png "Ballerina metrics dashboard")
