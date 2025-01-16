@@ -1,11 +1,4 @@
----
-title: Observe Ballerina programs
-description: See how Ballerina supports observability by exposing itself via metrics, tracing, and logs to external systems.
-keywords: ballerina, observability, metrics, tracing, logs, opentelemetry
-permalink: /learn/observe-ballerina-programs/
-active: observe-ballerina-programs
-intro: Observability is a measure of how well the internal states of a system can be inferred from the knowledge of its external outputs.
----
+# Observe Ballerina Programs
 
 Ballerina Observability is a built-in feature designed to facilitate monitoring and debugging of Ballerina applications by collecting, processing, and analyzing performance and operational data. It integrates seamlessly with observability tools and supports three primary pillars of observability: metrics, tracing, and logging.
 
@@ -143,13 +136,13 @@ service /shop on new http:Listener(8090) {
 ```
 
 ### Enable observability for a Ballerina project
-Observability can be enabled in a Ballerina project by adding the following section to the `Ballerina.toml` file.
+Observability can be enabled in a Ballerina project by adding the following section to the `Ballerina.toml` file. 
 ```toml
 [build-options]
 observabilityIncluded=true
 ```
 
->**Note:** the above configuration is included by default in the `Ballerina.toml` file generated when initiating a new
+>**Note:** the above configuration is included by default in the `Ballerina.toml` file generated when initiating a new 
 package using the `bal new` command.
 
 Alternatively, we can pass the `--observability-included` flag with the `bal run` command to start a Ballerina program with observability enabled.
@@ -158,8 +151,8 @@ Alternatively, we can pass the `--observability-included` flag with the `bal run
 To enable observability (both metrics and tracing) in the Ballerina runtime, use the following configurations:
 ```toml
 [ballerina.observe]
-enabled = true
-provider = <PROVIDER>
+enabled=true
+provider=<PROVIDER>
 ```
 
 Metrics and tracing can be enabled separately as well by using the following configurations. Add additional configurations specific to the tool or platform you are using.
@@ -196,11 +189,11 @@ Observability tools and platforms help monitor and analyze application performan
 
 - **[Elastic Stack](https://www.elastic.co/elastic-stack):** A collection of tools (Elasticsearch, Logstash, Kibana) for centralized logging and analytics.
 
-Following contains the guide to setup and observe Ballerina programs in each of the above mentioned observability tool or platform.
+Following contains the guide to set up and observe Ballerina programs in each of the observability tool or platform mentioned above.
 
-- [Observe Ballerina programs with Prometheus](<LINK_TO_PROMETHEUS_GUIDE>)
-- [Observe Ballerina programs with Jaeger](<LINK_TO_JAEGER_GUIDE>)
-- [Observe Ballerina programs with Zipkin](<LINK_TO_ZIPKIN_GUIDE>)
-- [Observe Ballerina programs with New Relic](<LINK_TO_NEW_RELIC_GUIDE>)
-- [Observe Ballerina programs with DataDog](<LINK_TO_DATADOG_GUIDE>)
-- [Observe Ballerina programs with Elastic Stack](<LINK_TO_ELASTIC_STACK_GUIDE>)
+- [Observe Ballerina programs with Prometheus](/learn/observe-ballerina-programs-with-prometheus)
+- [Observe Ballerina programs with Jaeger](/learn/observe-ballerina-programs-with-jaeger)
+- [Observe Ballerina programs with Zipkin](/learn/observe-ballerina-programs-with-zipkin)
+- [Observe Ballerina programs with New Relic](/learn/observe-ballerina-programs-with-new-relic)
+- [Observe Ballerina programs with DataDog](/learn/observe-ballerina-programs-with-datadog)
+- [Observe Ballerina programs with Elastic Stack](/learn/observe-ballerina-programs-with-elastic-stack)
