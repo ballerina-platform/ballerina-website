@@ -7,13 +7,13 @@ active: overview-of-ballerina-observability
 intro: Observability is a measure of how well the internal states of a system can be inferred from the knowledge of its external outputs.
 ---
 
-Ballerina Observability is a built-in feature designed to facilitate monitoring and debugging of Ballerina applications by collecting, processing, and analyzing performance and operational data. It integrates seamlessly with observability tools and supports three primary pillars of observability: metrics, tracing, and logging.
+Ballerina Observability is a built-in feature designed to facilitate monitoring and debugging Ballerina applications by collecting, processing, and analyzing performance and operational data. It integrates seamlessly with observability tools and supports three primary pillars of observability: metrics, tracing, and logging.
 
 1. **Metrics** - Provide quantitative insights into the performance of an application, such as request counts, latencies, and error counts.
 2. **Tracing** - Used to track requests/transactions as they flow through different services in a distributed system from the point of entry to exit.
 3. **Logging** - Text records of activities that occurred with relevant information along with the timestamp with various log levels for further analysis.
 
-Observability is the ability to understand the state of a system based on the data it generates, such as logs, metrics, and traces. Observability tools and platforms enable developers to monitor, troubleshoot, and optimize their applications effectively.
+Observability is understanding a system's state based on the data it generates, such as logs, metrics, and traces. Observability tools and platforms enable developers to monitor, troubleshoot, and optimize their applications effectively.
 
 Ballerina services and any client connectors are observable by default. HTTP/HTTPS and SQL client connectors use semantic tags to make tracing and metrics monitoring more informative.
 
@@ -149,7 +149,7 @@ Observability can be enabled in a Ballerina project by adding the following sect
 observabilityIncluded=true
 ```
 
->**Note:** the above configuration is included by default in the `Ballerina.toml` file generated when initiating a new 
+>**Note:** The above configuration is included by default in the `Ballerina.toml` file generated when initiating a new 
 package using the `bal new` command.
 
 Alternatively, we can pass the `--observability-included` flag with the `bal run` command to start a Ballerina program with observability enabled.
@@ -178,11 +178,11 @@ ballerina.observe. metricsReporter | Reporter name that reports the collected Me
 ballerina.observe.tracingEnabled | Whether tracing is enabled (true) or disabled (false) | false | `true` or `false`
 ballerina.observe.tracingProvider | The tracer name, which implements the tracer interface. | `None` | `jaeger`, `zipkin`, `newrelic` or the name of the tracer of any custom implementation.
 
-### Observability tools and platforms supported by Ballerina
+## Observability tools and platforms supported by Ballerina
 
-This outlines how to enable and configure observability in Ballerina for various tools and platforms. It provides a step-by-step guide for setting up monitoring, tracing, and logging using widely-used observability solutions.
+This outlines how to enable and configure observability in Ballerina for various tools and platforms. It provides a step-by-step guide for setting up monitoring, tracing, and logging using widely used observability solutions.
 
-Observability tools and platforms help monitor and analyze application performance, identify issues, and ensure reliability. Following are the main observability tools and platforms supprted by Ballerina:
+Observability tools and platforms help monitor and analyze application performance, identify issues, and ensure reliability. Following are the main observability tools and platforms supported by Ballerina:
 
 - **[Prometheus](https://prometheus.io/):** A monitoring system and time-series database for metrics collection and alerting.
 
