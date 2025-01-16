@@ -1,4 +1,11 @@
-# Observe Ballerina Programs
+---
+title: Overview of Ballerina Observability
+description: See how Ballerina supports observability by exposing itself via metrics, tracing, and logs to external systems.
+keywords: ballerina, observability, metrics, tracing, logs, opentelemetry
+permalink: /learn/overview-of-ballerina-observability/
+active: overview-of-ballerina-observability
+intro: Observability is a measure of how well the internal states of a system can be inferred from the knowledge of its external outputs.
+---
 
 Ballerina Observability is a built-in feature designed to facilitate monitoring and debugging of Ballerina applications by collecting, processing, and analyzing performance and operational data. It integrates seamlessly with observability tools and supports three primary pillars of observability: metrics, tracing, and logging.
 
@@ -151,8 +158,8 @@ Alternatively, we can pass the `--observability-included` flag with the `bal run
 To enable observability (both metrics and tracing) in the Ballerina runtime, use the following configurations:
 ```toml
 [ballerina.observe]
-enabled=true
-provider=<PROVIDER>
+enabled = true
+provider = <PROVIDER>
 ```
 
 Metrics and tracing can be enabled separately as well by using the following configurations. Add additional configurations specific to the tool or platform you are using.
