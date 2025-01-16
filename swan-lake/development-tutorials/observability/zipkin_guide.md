@@ -7,7 +7,7 @@ active: observe-ballerina-programs-with-zipkin
 intro: The sections below include information about how to observe distributed tracing of Ballerina programs with Zipkin.
 ---
 
-Users can configure Ballerina to support distributed tracing with [Zipkin](https://zipkin.io/), which is one of the open source and distributed tracing platforms helps to troubleshoot latency problems in service architectures. Ballerina provides tracing data in opentelemetry format.
+Users can configure Ballerina to support distributed tracing with [Zipkin](https://zipkin.io/), which is one of the open-source and distributed tracing platforms that helps troubleshoot latency problems in service architectures. Ballerina provides tracing data in OpenTelemetry format.
 
 This [Example](<LINK_TO_OVERVIEW_OF_BALLERINA_OBSERVABILITY_PAGE_EXAMPLE_SECTION>) will be used in the guide. Follow the steps given below to observe Ballerina tracing in Zipkin.
 
@@ -35,7 +35,7 @@ Zipkin extension has a `Zipkin Span Exporter` which will push tracing data as ba
 
 ### Step 3 - Configure Ballerina runtime configurations
 
-Tracing can be enabled in your Ballerina project using configuration similar to the following in your `Config.toml` file.
+Tracing can be enabled in your Ballerina project using configurations similar to the following in your `Config.toml` file.
 
 ```toml
 [ballerina.observe]
@@ -108,9 +108,9 @@ $ curl -X POST http://localhost:8090/shop/order \
 $ curl -X GET http://localhost:8090/shop/order/1
 ```
 
-### Step 6 - View distributed tracing on Zipkin server
+### Step 6 - View distributed tracing on the Zipkin server
 
-Go to <http://localhost:9411> and load the web UI of Zipkin to make sure it is functioning properly. You can select the service which you need tracing information find traces.
+Go to <http://localhost:9411> and load the web UI of Zipkin to make sure it is functioning properly. You can select the service for which you need tracing information find traces.
 
 The image below is the sample tracing information you can see in Zipkin.
     
