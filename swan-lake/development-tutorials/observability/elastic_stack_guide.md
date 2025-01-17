@@ -1,33 +1,24 @@
 ---
-title: Observe logs
-description: See how Ballerina supports observing tracing of Ballerina programs.
-keywords: ballerina, observability, logs, elastic stack
-permalink: /learn/observe-logs/
-active: observe-logs
-intro: In Ballerina, distributed logging and analysis are supported by the Elastic Stack. Ballerina has a log module for logging into the console. To monitor the logs, the Ballerina standard output needs to be redirected to a file.
+title: Observe Ballerina programs with Elastic Stack
+description: See how Ballerina supports observability by exposing itself via metrics and tracing to DataDog.
+keywords: ballerina, observability, metrics, tracing, elastic stack
+permalink: /learn/observe-ballerina-programs-with-elastic-stack/
+active: observe-ballerina-programs-with-elastic-stack
+intro: The sections below include information about how to observe logs of Ballerina programs with Elastic Stack.
 ---
 
-This can be done by running the Ballerina service as below.
+In Ballerina, distributed logging and analysis are supported by the [Elastic Stack](https://www.elastic.co/elastic-stack). Ballerina has a log module for logging into the console. To monitor the logs, the Ballerina standard output needs to be redirected to a file.
 
-```
-$ nohup bal run hello_world_service.bal > ballerina.log &
-```
-
-You can view the logs with the command below.
-
-```
-$ tail -f ~/wso2-ballerina/workspace/ballerina.log
-```
-
-### Set up the external systems for log analytics
-
-#### Set up Elastic Stack
 The Elastic Stack comprises the following components.
 
-1. Beats - Multiple agents that ship data to Logstash or Elasticsearch. In our context, Filebeat will ship the Ballerina logs to Logstash. Filebeat should be a container running on the same host as the Ballerina service. This is so that the log file (ballerina.log) can be mounted to the Filebeat container.
-2. Logstash - Used to process and structure the log files received from Filebeat and send them to Elasticsearch.
-3. Elasticsearch - Storage and indexing of the logs sent by Logstash.
-4. Kibana - Visualizes the data stored in Elasticsearch.
+1. **Beats** - Multiple agents that ship data to Logstash or Elasticsearch. In our context, Filebeat will ship the Ballerina logs to Logstash. Filebeat should be a container running on the same host as the Ballerina service. This is so that the log file (ballerina.log) can be mounted to the Filebeat container.
+2. **Logstash** - Used to process and structure the log files received from Filebeat and send them to Elasticsearch.
+3. **Elasticsearch** - Storage and indexing of the logs sent by Logstash.
+4. **Kibana** - Visualizes the data stored in Elasticsearch.
+
+This [Example](<LINK_TO_OVERVIEW_OF_BALLERINA_OBSERVABILITY_PAGE_EXAMPLE_SECTION>) will be used in the guide. Follow the steps given below to observe Ballerina logs in Elastic Stack.
+
+### Step 1 - Set up Elastic Stack
 
 Elasticsearch and Kibana are provided as <a href="https://www.elastic.co/cloud" target="_blank">Cloud services</a>. Alternatively, Docker containers can be used to set up Elasticsearch and Kibana as well.
 
@@ -109,4 +100,20 @@ Elasticsearch and Kibana are provided as <a href="https://www.elastic.co/cloud" 
     
     The `-v` flag is used for bind mounting, where the container will read the file from the host machine. Provide the path to the `ballerina.log` file to be bind-mounted to the filebeat container.
 
-7. Access Kibana to visualize the logs at <http://localhost:5601>. Add an index named `ballerina` and click on `Discover` to visualize the logs.
+### Step 2 - Run Ballerina Service
+
+This can be done by running the Ballerina service as below.
+
+```
+$ nohup bal run main.bal > ballerina.log &
+```
+
+You can view the logs with the command below.
+
+```
+$ tail -f ~/wso2-ballerina/workspace/ballerina.log
+```
+
+### Step 3 - View Logs on Kibana
+
+Access Kibana to visualize the logs at <http://localhost:5601>. Add an index named `ballerina` and click on `Discover` to visualize the logs.
