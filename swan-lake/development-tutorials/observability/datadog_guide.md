@@ -199,7 +199,7 @@ You can observe the metrics in the DataDog platform under the `Metrics` tab in t
 
 You can add filters and use functions in the DataDog to visualize what you want with the metrics provided by Ballerina.
 
-Ballerina provides a [dashboard](https://drive.google.com/file/d/1y9FUIvBhUjmFUYwEbKUENWtrwHxLZVuX/view?usp=sharing) in the DataDog to observe metrics in Ballerina applications.
+Ballerina provides a [dashboard](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-prometheus/refs/heads/main/metrics-dashboards/datadog/ballerina_metrics_dashboard.json) in the DataDog to observe metrics in Ballerina applications.
 
 You can add a new dashboard in the DataDog under the `Dashboards` tab in the left navigation. After creating the new dashboard, go to the `Configure` tab in the dashboard. Import the `dashboard.json` file provided above.
 
