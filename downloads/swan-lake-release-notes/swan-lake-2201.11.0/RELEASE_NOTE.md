@@ -11,7 +11,7 @@ redirect_from:
     - /downloads/swan-lake-release-notes
 ---
 
-## Overview of Ballerina Swan Lake Update 10 (2201.11.0)
+## Overview of Ballerina Swan Lake Update 11 (2201.11.0)
 
 <em> Swan Lake Update 11 (2201.11.0) is the eleventh update release of Ballerina Swan Lake, and it includes a new set of features and significant improvements to the compiler, runtime, Ballerina library, and developer tooling. It is based on the 2024R1 version of the Language Specification.</em> 
 
@@ -168,6 +168,44 @@ To view bug fixes, see the GitHub milestone for Swan Lake Update 11 (2201.11.0) 
 ### New features
 
 ### Improvements
+
+- Replaced `Package.md`, and `Module.md` with `README.md` as the primary documentation for packages, ensuring a unified documentation format across Ballerina Central and version control platforms. 
+
+  If you create a new package with the library template, a `README.md` is created.
+
+  ```
+  $ bal build -t lib winery
+
+  .
+  ├── winery.bal
+  ├── Ballerina.toml
+  ├── README.md
+  └── tests/
+        └── lib_test.bal
+  ```
+
+- Introduced the capability to overrride the default `README.md` by specifying a preferred file using the `readme` field in the `[package]` table of the `Ballerina.toml`.
+
+  ``` toml
+  [package]
+  org = "samjs"
+  name = "winery"
+  version = "0.1.0"
+  readme = "docs/Reference.md"
+  ```
+
+- Introduced configuration support to specify metadata, including enabling export and defining a custom readme file name for a specific module.
+  
+  The following example demonstrates configuring the foo module in `Ballerina.toml`.
+
+  ``` toml
+  [[package.modules]]
+  name = "winery.foo"
+  export = true
+  readme = "README.md"
+   ```
+  
+- Upgraded the version of BALA archives to `3.0.0` to accommodate the above changes.
 
 ### Bug fixes
 

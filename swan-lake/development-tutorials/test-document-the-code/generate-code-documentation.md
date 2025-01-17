@@ -106,7 +106,7 @@ remote isolated function submit(string httpVerb, string path, RequestMessage mes
 
 ## Document a module
 
-A Ballerina module can have a `Module.md` file, which describes the module and its usage.
+A Ballerina module can have a `README.md` file, which describes the module and its usage.
 
 A typical package structure of a Ballerina package is like this:
 
@@ -114,20 +114,18 @@ A typical package structure of a Ballerina package is like this:
 /
   Ballerina.toml       # Configuration, which defines the package intent.
   main.bal
-  Module.md            # Contains descriptive metadata of the default module to be displayed in
+  README.md            # Contains descriptive metadata of the default module to be displayed in
                        # API documentation. This is optional.
-  Package.md           # Contains descriptive metadata of the package to be displayed in
-                       # Ballerina Central. This is optional.
     modules
       module1/             
-        Module.md      # Contains descriptive metadata to be displayed in 
+        README.md      # Contains descriptive metadata to be displayed in 
                        # Ballerina Central. This is optional.
         *.bal
         [tests/]       # Module-specific unit and integration tests.
         [resources/]   # Module-specific resources.
 
       module2/
-        Module.md
+        README.md
         *.bal
         [tests/]
         [resources/]
@@ -137,9 +135,18 @@ A typical package structure of a Ballerina package is like this:
   target/              # Compiled executables and other artifacts end up here.
 ```
 
-The `bal doc` command will read the `Package.md` and `Module.md` files and prepend them to the generated HTML file.
+The `bal doc` command will read the `README.md` files and prepend them to the generated HTML file.
 
-Check the <a href="https://lib.ballerina.io/ballerina/http/latest" target="_blank">`http` module API Documentation</a> for sample HTML that has `Module.md` content at the top followed by the other module constructs.
+The documentation file can be changed by explicitly specifying the path to the documentation file in the `Ballerina.toml`, under the `[[package.modules]]` array.
+
+```toml
+[[package.modules]]
+name = "winery.bar"
+export = true
+readme = "docs/ModuleReference.md"
+```
+
+Check the <a href="https://lib.ballerina.io/ballerina/http/latest" target="_blank">`http` module API Documentation</a> for sample HTML that has `README.md` content at the top followed by the other module constructs.
 
 ## Generate Ballerina documentation
 

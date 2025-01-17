@@ -67,14 +67,13 @@ cd hello_service
 $ bal new -t lib hello_lib
 ```
 
-This creates a Ballerina source file containing a function that prints `Hello, world!` along with a test file to test the function. Additionally, it creates the `Package.md` file, which is required to [publish a package to Ballerina Central](/learn/publish-packages-to-ballerina-central).
+This creates a Ballerina source file containing a function that prints `Hello, world!` along with a test file to test the function. Additionally, it creates the `README.md` file, which is required to [publish a package to Ballerina Central](/learn/publish-packages-to-ballerina-central).
 
 ```
 
 ├── Ballerina.toml
 ├── hello_lib.bal
-├── Module.md
-├── Package.md
+├── README.md
 └── tests
     └── lib_test.bal
 ```
@@ -112,7 +111,6 @@ The package structure after adding a non-default module will have the directory 
 ├── main.bal
 └── modules
     └── util
-        ├── Module.md
         ├── tests
         │   └── lib_test.bal
         └── util.bal

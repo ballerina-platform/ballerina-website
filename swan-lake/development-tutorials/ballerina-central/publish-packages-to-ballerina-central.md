@@ -23,8 +23,7 @@ $ cd hello
 $ tree .
     .
     ├── Ballerina.toml
-    ├── Module.md
-    ├── Package.md
+    ├── README.md
     ├── hello.bal
     ├── resources
     └── tests
@@ -34,8 +33,8 @@ $ tree .
 ```
 
 * The `Ballerina.toml` file identifies the directory as a Ballerina package. You can edit the `Ballerina.toml` file to change the organization, name, and version of the package.  Additionally, you can add an icon, a description, and keywords to the package, allowing users to easily find it through search functions. To learn more about these fields, see [The Ballerina.toml file](/learn/package-references/#the-ballerinatoml-file)
-* The `Package.md` is required when you publish a package to a repository. You can edit the content to add a meaningful description about the package.
-* The `hello.bal` file, `resources/` directory `tests/` directory, and the `Module.md` file belong to the default module of the package. 
+* The `README.md` is required when you publish a package to a repository. You can edit the content to add a meaningful description about the package.
+* The `hello.bal` file, `resources/` directory, and the `tests/` directory belong to the default module of the package. 
  
 >**Info:** For more information on these files, see [Package layout](/learn/package-references/#package-layout).
 
