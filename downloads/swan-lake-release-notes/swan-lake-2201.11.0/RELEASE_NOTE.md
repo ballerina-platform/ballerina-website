@@ -43,6 +43,30 @@ If you have not installed Ballerina, download the [installers](/downloads/#swanl
 
 ### Improvements
 
+#### Support for XML Step Extensions in XML Step Expression
+
+The XML step expression now supports step extensions, including method invocation, member access, filtering, and combinations of these.
+
+```ballerina
+public function main() {
+    xml x = xml
+    `<item><!--comment--><name>T-shirt</name><price>19.99</price><brand><name>nike</name></brand></item>
+      <item><?data?><name>Backpack</name><price>34.99</price><brand><name>adidas</name></brand></item>`;
+
+    // Evaluates to `<name>nike</name><name>adidas</name>`
+    xml x1 = x/**/<name>[1];
+
+    // Evaluates to `<name>nike</name><name>adidas</name>`
+    xml x2 = x/<brand>.children();
+
+    // Evaluates to `<price>19.99</price><price>34.99</price>`
+    xml x3 = x/*.<price>;
+
+    // Evaluates to `<!--comment--><?data?>`
+    xml x4 = x/*[0].filter(y => y is xml:Comment || y is xml:ProcessingInstruction);
+}
+```
+
 ### Bug fixes
 
 To view bug fixes, see the [GitHub milestone for Swan Lake Update 11 (2201.11.0)](https://github.com/ballerina-platform/ballerina-lang/issues?q=is%3Aissue+label%3ATeam%2FCompilerFE+milestone%3A2201.11.0+is%3Aclosed+label%3AType%2FBug).
